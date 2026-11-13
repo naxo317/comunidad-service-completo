@@ -1,0 +1,3 @@
+package com.cine_teatro.comunidad.model;
+import jakarta.persistence.*;import java.time.Instant;
+@Entity @Table(name="publicacion") public class Publicacion {@Id @GeneratedValue(strategy=GenerationType.IDENTITY) public Long idPublicacion; @Column(nullable=false) public String idUsuario; @Column(nullable=false) public String titulo; @Column(nullable=false,length=10000) public String contenido; @Enumerated(EnumType.STRING) @Column(nullable=false) public Categoria categoria; public Long idContenido; @Column(nullable=false) public Instant fechaCreacion=Instant.now(); public Instant fechaActualizacion=Instant.now(); @Enumerated(EnumType.STRING) public Estado estado=Estado.VISIBLE;}
